@@ -1,0 +1,17 @@
+<% if user_signed_in? %>
+<h1>You're signed in!</h1>
+
+<% else %>
+<div class="center hero-unit">
+    <h1>Welcome to WorkDemanded</h1>
+
+    <h2>
+      You've found the home page for
+      <a href="http://workdemanded.com/">WorkDemanded.
+    </h2>
+
+    <%= link_to "Sign up now!", new_user_registration_path, 
+                                class: "btn btn-large btn-primary" %>
+</div>
+
+<% end %>

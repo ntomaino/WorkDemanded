@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Omrails</title>
+     <%= stylesheet_link_tag    "application", :media => "all" %>
+     <%= javascript_include_tag "application" %>
+     <%= csrf_meta_tags %>
+    </head>
+    <body>
+        <header>
+        <header class="navbar navbar-fixed-top">
+          <div class="navbar-inner">
+            <div class="container">
+              <%= link_to "WorkDemanded", '#', id: "logo" %>
+              <nav>
+                <ul class="nav pull-right">
+                    <li><%= link_to "About", about_path %></li>
+					<% if user_signed_in? %>
+					<li><%= link_to "Sign Out", destroy_user_session_path, :method => :delete %></li>
+					<% else %>
+<li><%= link_to "Sign In", new_user_session_path %></li>
+					<% end %>
+  
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </header>
+        <div class="container">
+            <% flash.each do |key, value| %>
+            <%= content_tag(:div, value, class: "alert alert-#{key}") %>
+            <% end %>
+            <%= yield %>
+        </div>
+    </body>
+</html>
