@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  typeofjob_id: 1
+  zipcode: MyString
+
+two:
+  typeofjob_id: 1
+  zipcode: MyString
