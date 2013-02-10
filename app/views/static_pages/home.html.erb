@@ -4,23 +4,35 @@
 <% else %>
 <div class="center hero-unit">
     <h1>Find short-term work nearby</h1>
-
-<BR>
+	
+<BR><BR>
 								<div class="row6">
 								  	<div class="row">
 									<div class="span13">
 								    <form method="get" action="/" class="form-inline" >
 								 <input name="q" class="span5" type="text"  placeholder="Type of Job" >
 								      <input name="loc" class="span5" type="text"  placeholder="Zip Code">
-								<BR><BR>     
+								<BR><BR>    
 								 <button type="submit" class="btn btn-large btn-primary">Get to work!</a> 
 								    </form>
 								  </div>
 								</div>
+								<div align= "left">
+								<div class='spread'>
+								  <div class='twshare left'>
+								    <a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="WorkDemanded">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+								  </div>
+								  <script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script><fb:like href="" layout="button_count" show_faces="false" width="450" font=""></fb:like>
+								</div>
 
-								
+								<% form_tag jobs_path, :method => 'get' do %>
+								  <p>
+								    <%= text_field_tag :search, params[:search] %>
+								    <%= submit_tag "Search", :name => nil %>
+								  </p>
+								<% end %>								
 
 
 </div>
-
+</div>
 <% end %>
