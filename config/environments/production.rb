@@ -13,6 +13,9 @@ Omrails::Application.configure do
 
   # Compress JavaScripts and CSS
   config.assets.compress = true
+  
+  config.gem 'rack-google-analytics', :lib => 'rack/google-analytics'
+  config.middleware.use Rack::GoogleAnalytics, :tracker => 'UA-38627555-1'
 
   # Don't fallback to assets pipeline if a precompiled asset is missed
   config.assets.compile = false
