@@ -10,7 +10,7 @@ root :to => 'static_pages#home'
   get "blog" => "static_pages#blog"
   get "search" => "searches#new"
   get "grants" => "searches#new"
-  
+  get "signup" => "static_pages#signup"
   resources :searches
   # The priority is based upon order of creation:
   # first created -> highest priority.
